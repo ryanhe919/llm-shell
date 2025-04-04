@@ -30,7 +30,7 @@ func LoadConfig() (*Config, error) {
 	maxTokens := flag.Int("max-tokens", 100, "生成的最大token数")
 	temperature := flag.Float64("temp", 0.2, "生成的随机性 (0-2)")
 	timeout := flag.Duration("timeout", 30*time.Second, "API请求超时时间")
-	execute := flag.Bool("exec", false, "自动执行生成的命令")
+	execute := flag.Bool("exec", true, "自动执行生成的命令")
 
 	// 解析命令行参数
 	flag.Parse()
