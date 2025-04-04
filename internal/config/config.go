@@ -24,7 +24,7 @@ func LoadConfig() (*Config, error) {
 	config := &Config{}
 
 	// 定义命令行选项
-	apiKey := flag.String("key", "sk-5c32e86719134d4ba84d0ed5e7245766", "OpenAI API密钥 (也可通过OPENAI_API_KEY环境变量设置)")
+	apiKey := flag.String("key", "", "OpenAI API密钥 (也可通过OPENAI_API_KEY环境变量设置)")
 	apiUrl := flag.String("url", "https://api.deepseek.com/chat/completions", "API端点URL")
 	model := flag.String("model", "deepseek-chat", "要使用的模型名称")
 	maxTokens := flag.Int("max-tokens", 100, "生成的最大token数")
