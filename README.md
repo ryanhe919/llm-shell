@@ -32,7 +32,7 @@ sudo make install
 
 ```bash
 # 设置API密钥
-export OPENAI_API_KEY="你的OpenAI密钥"
+export DEEPSEEK_API_KEY="你的OpenAI密钥"
 
 # 生成命令
 sgpt "查找超过100MB的文件并按大小排序"
@@ -42,7 +42,7 @@ sgpt "查找超过100MB的文件并按大小排序"
 
 ```bash
 # 指定模型和其他参数
-sgpt --model "gpt-4o" --max-tokens 200 --temp 0.5 "压缩所有PDF文件"
+sgpt --model "deepseek-chat" --max-tokens 200 --temp 0.5 "压缩所有PDF文件"
 
 # 使用自定义API端点（例如本地部署的模型）
 sgpt --url "http://localhost:8000/v1/chat/completions" "列出所有正在运行的进程"
@@ -69,4 +69,4 @@ sgpt --exec "递归查找所有包含'error'的日志文件"
 
 ## 许可证
 
-MIT
+MIT License

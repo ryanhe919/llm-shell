@@ -60,7 +60,7 @@ func LoadConfig() (*Config, error) {
 	// API密钥优先级：命令行参数 > 环境变量
 	config.APIKey = *apiKey
 	if config.APIKey == "" {
-		config.APIKey = os.Getenv("OPENAI_API_KEY")
+		config.APIKey = os.Getenv("DEEPSEEK_API_KEY")
 	}
 
 	return config, nil

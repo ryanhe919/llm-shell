@@ -26,8 +26,8 @@ func main() {
 	// 验证配置
 	if !cfg.IsValid() {
 		if cfg.APIKey == "" {
-			fmt.Println("错误: 必须提供OpenAI API密钥")
-			fmt.Println("可以通过 --key 标志或设置 OPENAI_API_KEY 环境变量")
+			fmt.Println("错误: 必须提供DEEPSEEK API密钥")
+			fmt.Println("可以通过 --key 标志或设置 DEEPSEEK_API_KEY 环境变量")
 		}
 		config.PrintUsage()
 		os.Exit(1)

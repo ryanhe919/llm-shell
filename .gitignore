@@ -25,7 +25,8 @@ go.work.sum
 .env
 
 # ide
-.idea/
+.idea
+.vscode
 
 #
 sgpt
