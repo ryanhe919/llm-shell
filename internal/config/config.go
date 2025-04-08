@@ -26,9 +26,9 @@ func LoadConfig() (*Config, error) {
 
 	// 定义命令行选项
 	apiKey := flag.String("key", "", "OpenAI API密钥 (也可通过OPENAI_API_KEY环境变量设置)")
-	apiUrl := flag.String("url", "https://api.deepseek.com/chat/completions", "API端点URL")
+	apiUrl := flag.String("url", "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions", "API端点URL")
 	apiSystem := flag.String("system", "Windows/Powershell", "系统名")
-	model := flag.String("model", "deepseek-chat", "要使用的模型名称")
+	model := flag.String("model", "deepseek-v3", "要使用的模型名称")
 	maxTokens := flag.Int("max-tokens", 100, "生成的最大token数")
 	temperature := flag.Float64("temp", 0.2, "生成的随机性 (0-2)")
 	timeout := flag.Duration("timeout", 30*time.Second, "API请求超时时间")

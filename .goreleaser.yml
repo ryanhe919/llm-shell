@@ -1,0 +1,24 @@
+project_name: sgpt
+
+build:
+  binary: sgpt
+  goos:
+    - darwin
+    - linux
+    - windows
+  goarch:
+    - amd64
+    - arm64
+
+archive:
+  format: tar.gz
+  replacements:
+    darwin: macOS
+
+release:
+  github:
+    owner: ryanhe919
+    name: llm-shell
+
+checksum:
+  name_template: 'checksums.txt'
