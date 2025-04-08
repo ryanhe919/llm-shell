@@ -1,19 +1,25 @@
 project_name: sgpt
 
 build:
+  # 指定入口文件：与 go build 命令中的 main.go 路径保持一致
+  main: ./cmd/sgpt/main.go
+  # 指定输出二进制的基础名称（在 Windows 下会自动变成 sgpt.exe）
   binary: sgpt
+  # 指定需要生成的平台
   goos:
-    - darwin
-    - linux
     - windows
+    - linux
+    - darwin
   goarch:
     - amd64
     - arm64
 
 archive:
-  format: tar.gz
-  replacements:
-    darwin: macOS
+  # 默认格式，可根据平台调整，比如 Windows 下建议使用 zip 格式
+  format_overrides:
+    - goos: windows
+      format: zip
+  name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
 
 release:
   github:
@@ -21,4 +27,4 @@ release:
     name: llm-shell
 
 checksum:
-  name_template: 'checksums.txt'
+  name_template: "checksums.txt"
