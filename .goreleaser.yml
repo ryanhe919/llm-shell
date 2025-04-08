@@ -1,5 +1,4 @@
-version: "2"
-project_name: sgpt
+version: 2
 
 builds:
   - main: ./cmd/sgpt/main.go
