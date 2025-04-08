@@ -91,8 +91,10 @@ func (c *OpenAIClient) GenerateShellCommand(prompt string, system string) (strin
 
 		// 移除代码块标记（如果有）
 		command = strings.TrimPrefix(command, "```bash")
+		command = strings.TrimPrefix(command, "```zsh")
 		command = strings.TrimPrefix(command, "```sh")
 		command = strings.TrimPrefix(command, "```shell")
+		command = strings.TrimPrefix(command, "```powershell")
 		command = strings.TrimPrefix(command, "```")
 		command = strings.TrimSuffix(command, "```")
 		command = strings.TrimSpace(command)
