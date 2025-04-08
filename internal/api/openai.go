@@ -27,11 +27,11 @@ func NewOpenAIClient(config ClientConfig, httpClient HTTPClient) *OpenAIClient {
 }
 
 // GenerateShellCommand 从自然语言描述生成shell命令
-func (c *OpenAIClient) GenerateShellCommand(prompt string) (string, error) {
+func (c *OpenAIClient) GenerateShellCommand(prompt string, system string) (string, error) {
 	// 构建系统提示
 	systemPrompt := `你是一个将自然语言转换为shell命令的工具。
 请只返回shell命令，不需要任何解释或标记。
-确保命令适用于Linux/macOS系统，并考虑命令的安全性。
+确保命令适用于` + system + `系统，并考虑命令的安全性。
 如果无法确定用户的意图，可以提供最合理的猜测，并使用#添加注释说明。
 你的任务是将用户的中文描述转换为有效的shell命令。`
 

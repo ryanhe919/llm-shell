@@ -7,7 +7,7 @@ import (
 
 // Client 定义API客户端接口
 type Client interface {
-	GenerateShellCommand(prompt string) (string, error)
+	GenerateShellCommand(prompt string, system string) (string, error)
 }
 
 // ClientConfig 包含API客户端配置
@@ -15,6 +15,7 @@ type ClientConfig struct {
 	APIKey      string
 	APIURL      string
 	Model       string
+	System      string
 	MaxTokens   int
 	Temperature float64
 	Timeout     time.Duration

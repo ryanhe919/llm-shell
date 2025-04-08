@@ -38,6 +38,7 @@ func main() {
 		APIKey:      cfg.APIKey,
 		APIURL:      cfg.APIURL,
 		Model:       cfg.Model,
+		System:      cfg.System,
 		MaxTokens:   cfg.MaxTokens,
 		Temperature: cfg.Temperature,
 		Timeout:     cfg.Timeout,
@@ -45,7 +46,7 @@ func main() {
 	client := api.NewOpenAIClient(clientConfig, nil)
 
 	// 生成shell命令
-	command, err := client.GenerateShellCommand(cfg.Prompt)
+	command, err := client.GenerateShellCommand(cfg.Prompt, cfg.System)
 	if err != nil {
 		fmt.Printf("命令生成失败: %v\n", err)
 		os.Exit(1)
