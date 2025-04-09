@@ -29,4 +29,5 @@ go.work.sum
 .vscode
 
 #
-sgpt
+sgpt# Added by goreleaser init:
+dist/
